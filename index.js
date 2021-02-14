@@ -5,15 +5,81 @@ import { fifaData } from './fifa.js';
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Practice accessing data by console.log-ing the following pieces of data note, you may want to filter the data first 😉*/
 
+// function yearWon(num){
+//     return ('Year'== 2014)
+// };
+
+// function finalPlayers(function) {
+//     return ("Status"== "Final")
+// };
+
+// function homeGame(function){
+//     return ["Home Team Name"]
+// };
+
 //(a) Home Team name for 2014 world cup final
+function homeTeamName(array,year)  {
+    array.filter(item){item => {
+        return item.year == year;
+    }};
+    array.filter(item){item => {
+        return item.status == "Final";
+    }};
+    return ['Home Team Name'];}
+
+console.log(homeTeamName(fifaData, 2014))
 
 //(b) Away Team name for 2014 world cup final
+function awayTeamName(array,year)  {
+array.filter(item){item => {
+        return item.year == year;
+    }};
+array.filter(item){item => {
+        return item.status == "Final";
+    }};
+    return ['Away Team Name'];
+}
+console.log(awayTeamName(fifaData,2014));
 
 //(c) Home Team goals for 2014 world cup final
+function homeTeamGoals(array,year){
+    array.filter(item){item => {
+        return item.year == year;
+    }};
+    array.filter(item){item => item.status== "Final"};
+    return ['Home Team Goals'];
+}
+console.log(homeTeamGoals(fifaData, 2014));
 
 //(d) Away Team goals for 2014 world cup final
-
+function awayTeamGoals(array,year){
+    array.filter(item){item => ({
+        return item.year == year;
+    });
+    array.filter(item) item => ({
+         item.status == "Final";
+    });
+    return ['Away Team Goals']
+} 
+console.log(awayTeamGoals(fifaData, 2014));
 //(e) Winner of 2014 world cup final */
+function finalWinner(array,year){
+    array.filter(item){item => {
+         item.year == 2014;
+    }};
+    array.filter(item){item => {
+         item.status == "Final";
+    }};
+    if (['Home Team Goal']> ['Away Team Goals']){
+         ['Home Team Name'];
+    }
+    else{
+         ['Away Team Name']
+    };
+};
+console.log(finalWinnter(fifaData,2014));
+
+
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -24,9 +90,11 @@ Use getFinals to do the following:
 hint - you should be looking at the stage key inside of the objects
 */
 
-function getFinals(/* code here */) {
-   /* code here */
-}
+function getFinals(data) {
+  let winners = [];
+    winners.push(fifaData.map(data.state ==="Final"));
+    return winners;
+};
 
 
 
@@ -36,9 +104,12 @@ Use the higher-order function called getYears to do the following:
 2. Receive a callback function getFinals from task 2 
 3. Return an array called years containing all of the years in the getFinals data set*/
 
-function getYears(/* code here */) {
-    /* code here */
-}
+function getYears(getFinals) {
+    let winningYears = [];
+    winningYears.push(getFinals.map(data.year))
+    return winningYears;
+};
+
 
 
 
@@ -49,10 +120,20 @@ Use the higher-order function getWinners to do the following:
 3. Determines the winner (home or away) of each `finals` game. 
 4. Returns the names of all winning countries in an array called `winners` */ 
 
-function getWinners(/* code here */) {
-    /* code here */
-}
-
+function getWinners(array, getFinals) {
+    let winningTeams = [];
+    winningTeams.push(getFinals.map(function(array)){
+        if( ['Home Team Goals'] > ['Away Team Goals']) {
+            return ['Home Team Name']
+        }
+        else {
+            return ['Away Team Name']
+        };
+    };
+    
+    return winningTeams;
+};
+console.log(getWinners(fifaData,getFinals));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -65,10 +146,11 @@ Use the higher-order function getWinnersByYear to do the following:
 hint: the strings returned need to exactly match the string in step 4.
  */
 
-function getWinnersByYear(/* code here */) {
-    /* code here */
-}
+function getWinnersByYear(array, getYears(year),getWinners(array,year)) {
+    return `In ${getYears(2014), ${getWinners(array,getFinals)} won the world cup!`;
+};
 
+console.log(getWinnersByYear(fifaData,getYears(fifaData,2014));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
